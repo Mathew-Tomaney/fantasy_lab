@@ -33,6 +33,10 @@ public class Room {
     public void addPlayer(Player player) {
         players.add(player);
     }
+    
+    public ArrayList<Player> getPlayers(){
+        return players;
+    }
 
     public Player getPlayer(int index) {
         return players.get(index);
@@ -57,5 +61,13 @@ public class Room {
         }
         this.players.get(0).takeDamage(this.getEnemy().attackPlayer());
     }
+
+    public void lootRoom(Player player) {
+        if (enemyIsDead()) {
+             player.collect(getTreasure());
+             players.clear();
+        }
+    }
 }
+
 

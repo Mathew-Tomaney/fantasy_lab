@@ -46,6 +46,14 @@ public class RoomTest {
         assertEquals(true, room.enemyIsDead());
         assertEquals(95, barbarian.getHealth());
     }
+
+    @Test
+    public void canLootRoom(){
+        room.fight();
+        room.lootRoom(barbarian);
+        assertEquals(200, barbarian.getGold());
+        assertEquals(0, room.getPlayers().size());
+    }
 }
 
 
