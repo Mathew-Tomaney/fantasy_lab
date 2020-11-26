@@ -22,6 +22,10 @@ public abstract class Player {
     public int getHealth(){
         return this.health;
     }
+    
+    public void setHealth(int damage){
+        this.health -= damage;
+    }
 
     public void takeDamage(int damage){
         this.health -= damage;
