@@ -11,4 +11,12 @@ public class EvilOrc implements IEnemy {
     public int attackPlayer() {
         return this.damageToPlayer;
     }
+
+    public int getHealth() {
+        return this.health;
+    }
+
+    public void reduceHealth(int damage){
+        this.health -= damage;
+    }
 }
