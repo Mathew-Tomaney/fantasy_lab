@@ -57,14 +57,16 @@ public class Room {
     public void fight() {
         Collections.shuffle(this.players);
         Player injuredPlayer = players.get(0);
-        for(Player player : this.players){
-            if(player.getHealth() < injuredPlayer.getHealth()){
-                injuredPlayer = player;
-                }
-            if(player.action() >= 0){
+        for(Player playerHealth : this.players) {
+            if (playerHealth.getHealth() < injuredPlayer.getHealth()) {
+                injuredPlayer = playerHealth;
+            }
+        }
+        for(Player player : players) {
+            if (player.action() >= 0) {
                 this.damageEnemy(player.action());
             } else {
-                if(injuredPlayer.getHealth() < 100) {
+                if (injuredPlayer.getHealth() < 100) {
                     injuredPlayer.setHealth(player.action());
                 }
             }
