@@ -38,4 +38,8 @@ public abstract class Player {
     public int getGold(){
         return this.gold;
     }
+    
+    public void increaseHealth(int health){
+        this.health += health;
+    }
 }

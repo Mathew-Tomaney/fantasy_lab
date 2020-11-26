@@ -19,7 +19,10 @@ public abstract class Fighter extends Player {
 
     public int action() {
         return this.selectedWeapon.getDamage();
+    }
 
+    public Weapons getSelectedWeapon(){
+        return this.selectedWeapon;
     }
 
     public void swap(int index) {

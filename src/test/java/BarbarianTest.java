@@ -21,13 +21,13 @@ public class BarbarianTest {
 
     @Test
     public void canAttackWithWeapon(){
-        assertEquals(20, barbarian.action());
+        assertEquals(30, barbarian.action());
     }
 
     @Test
     public void canSwapWeapon(){
         barbarian.swap(1);
-        assertEquals(5, barbarian.action());
+        assertEquals(15, barbarian.action());
     }
 
 
