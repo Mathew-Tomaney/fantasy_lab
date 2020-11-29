@@ -1,6 +1,6 @@
 package DungeonTests;
 
-import Dungeon.Orc;
+import Dungeon.Enemies.Goblin;
 import Dungeon.Room;
 import Dungeon.Treasure;
 import Players.Characters.Barbarian;
@@ -13,15 +13,15 @@ import static org.junit.Assert.assertEquals;
 public class RoomTest {
 
     Room room;
-    Orc orc;
+    Goblin goblin;
     Treasure treasure;
     Barbarian barbarian;
 
     @Before
     public void before() {
-        orc = new Orc();
+        goblin = new Goblin();
         treasure = new Treasure("Chest", 200);
-        room = new Room("Dungeon", 1, treasure, orc);
+        room = new Room("Dungeon", 1, treasure, goblin);
         barbarian = new Barbarian("Conan");
         barbarian.addWeapon(Weapons.AXE);
         room.addPlayer(barbarian);

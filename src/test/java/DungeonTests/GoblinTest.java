@@ -1,26 +1,26 @@
 package DungeonTests;
 
-import Dungeon.Orc;
+import Dungeon.Enemies.Goblin;
 import org.junit.Before;
 import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
 
-public class OrcTest {
+public class GoblinTest {
 
-    Orc orc;
+    Goblin goblin;
 
     @Before
     public void before(){
-        orc = new Orc();
+        goblin = new Goblin();
     }
     @Test
     public void canAttackPlayer(){
-        assertEquals(5, orc.attackPlayer());
+        assertEquals(5, goblin.attackPlayer());
     }
     @Test
     public void hasHealth(){
-        assertEquals(10, orc.getHealth());
+        assertEquals(10, goblin.getHealth());
     }
 }
 

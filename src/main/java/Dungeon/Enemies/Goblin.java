@@ -1,17 +1,19 @@
-package Dungeon;
+package Dungeon.Enemies;
 
-public class Orc implements IEnemy {
+import Dungeon.IEnemy;
+
+public class Goblin implements IEnemy {
     
     private int health;
-    private int damageToPlayer;
+    private int basicAttack;
     
-    public Orc(){
+    public Goblin(){
         this.health = 10;
-        this.damageToPlayer = 5;
+        this.basicAttack = 5;
     }
 
     public int attackPlayer() {
-        return this.damageToPlayer;
+        return this.basicAttack;
     }
 
     public int getHealth() {
