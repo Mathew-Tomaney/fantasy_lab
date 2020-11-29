@@ -34,5 +34,17 @@ public class BarbarianTest {
         assertEquals(15, barbarian.action());
     }
 
+    @Test
+    public void barbarianDamageBoostsAt_HalfHealth(){
+        barbarian.takeDamage(50);
+        assertEquals(40, barbarian.action());
+    }
+
+    @Test
+    public void barbarianDamageBoostsAt_QuarterHealth(){
+        barbarian.takeDamage(75);
+        assertEquals(50, barbarian.action());
+    }
+
 
 }

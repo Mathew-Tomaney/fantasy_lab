@@ -6,11 +6,13 @@ public abstract class Player {
 
     private String name;
     private int health;
+    private int maxHealth;
     private int gold;
 
     public Player(String name){
         this.name = name;
-        this.health = 100;
+        this.maxHealth = 100;
+        this.health = this.maxHealth;
         this.gold = 0;
 
     }
@@ -26,6 +28,8 @@ public abstract class Player {
     public int getHealth(){
         return this.health;
     }
+
+    public int getMaxHealth() { return this.maxHealth; }
     
     public void setHealth(int damage){
         this.health -= damage;
