@@ -46,6 +46,8 @@ public class Room {
         return players.get(index);
     }
 
+    public void randomiseOrder() {Collections.shuffle(this.players);}
+
     public boolean enemyIsDead() {
         if (this.getEnemy().getHealth() <= 0) {
             return true;
@@ -59,7 +61,7 @@ public class Room {
     }
 
     public void fight() {
-        Collections.shuffle(this.players);
+        randomiseOrder();
         Player injuredPlayer = players.get(0);
         for(Player playerHealth : this.players) {
             if (playerHealth.getHealth() < injuredPlayer.getHealth()) {
