@@ -60,6 +60,23 @@ public class Room {
         this.getEnemy().reduceHealth(damage);
     }
 
+    public String gameOver(){
+        return "You died.";
+    }
+
+    public void removeCasualties(){
+        for(Player player : players){
+            if(player.getHealth() <= 0){
+                players.remove(player);
+            }
+        }
+        if(players.size() == 0){
+            gameOver();
+        } else {
+            lootRoom(players.get(0));
+        }
+    }
+
     public void fight() {
         randomiseOrder();
         Player injuredPlayer = players.get(0);
@@ -78,14 +95,20 @@ public class Room {
             }
         }
         this.players.get(0).takeDamage(this.getEnemy().attackPlayer());
+        removeCasualties();
+
     }
 
     public void lootRoom(Player player) {
         if (enemyIsDead()) {
              player.collect(getTreasure());
              players.clear();
+        } else {
+            fight();
         }
     }
+
+
 }
 
 

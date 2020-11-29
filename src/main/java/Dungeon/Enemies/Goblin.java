@@ -2,6 +2,8 @@ package Dungeon.Enemies;
 
 import Dungeon.IEnemy;
 
+import java.util.ArrayList;
+
 public class Goblin implements IEnemy {
     
     private int health;
@@ -23,4 +25,5 @@ public class Goblin implements IEnemy {
     public void reduceHealth(int damage){
         this.health -= damage;
     }
+
 }

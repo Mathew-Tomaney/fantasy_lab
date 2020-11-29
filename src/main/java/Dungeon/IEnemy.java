@@ -1,5 +1,7 @@
 package Dungeon;
 
+import java.util.ArrayList;
+
 public interface IEnemy {
 
     int attackPlayer();
